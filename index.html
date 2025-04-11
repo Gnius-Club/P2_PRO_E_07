@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook - Sesión 7: ¡Expandiendo la Misión! – Feature Adicional 1 (Planificación)</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; color: #333; line-height: 1.6; }
+        .container { max-width: 1000px; margin: auto; padding: 20px; }
+        .header { background-color: #ffa500; color: white; text-align: center; padding: 10px; } /* Orange Accent */
+        .activity { margin-bottom: 20px; }
+        .banner {
+            background-color: #ffa500; /* Orange Accent */
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            font-weight: bold;
+            list-style: none;
+            display: block;
+        }
+        .content { display: none; padding: 10px; border: 1px solid #ddd; margin-bottom: 10px; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+            vertical-align: top;
+        }
+        span[style*="color: red;"] {
+            font-weight: bold;
+        }
+         ul, ol {
+            margin-top: 0;
+            margin-bottom: 10px;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        .time-title { margin-bottom: 20px; text-align: center; font-size: 1.2em; color: #555;}
+
+        summary {
+           display: block;
+           list-style: none;
+        }
+        summary::-webkit-details-marker {
+           display: none;
+        }
+
+    </style>
+    <script>
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            if (content) {
+                if (content.style.display === "none" || content.style.display === "") {
+                    content.style.display = "block";
+                } else {
+                    content.style.display = "none";
+                }
+            }
+        }
+
+        window.onload = () => {
+            const contents = document.querySelectorAll('.content');
+            contents.forEach(content => {
+                content.style.display = 'none';
+            });
+        };
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h1>Playbook - Sesión 7: ¡Expandiendo la Misión! – Feature Adicional 1 (Planificación)</h1>
+    </div>
+    <div class="container">
+        <h2 class="time-title">Tiempo efectivo de clase: 40 minutos</h2>
+
+        <!-- Resumen de Sesión -->
+        <div id="activity-0" class="activity">
+            <div class="banner" onclick="toggleContent('activity_0_content')">
+                <div class="title">📝 Resumen de Sesión</div>
+            </div>
+            <div id="activity_0_content" class="content">
+                <table>
+                    <tr>
+                        <td style="width: 50%; padding: 10px; border-right: 1px solid #ddd;">
+                            <strong>🎯 Objetivo de la Sesión:</strong>
+                            <ul>
+                                <li>Seleccionar la primera característica adicional (feature) significativa a implementar, basada en el T-Bar.</li>
+                                <li>Planificar detalladamente cómo se implementará esta feature en Scratch.</li>
+                                <li>Crear el backlog de tareas para la Feature 1 en el Kanban.</li>
+                                <li>Iniciar el desarrollo moviendo la primera tarea de la feature a "Haciendo".</li>
+                            </ul>
+                            <strong>⏱️ Duración Estimada:</strong> 40 minutos.
+                        </td>
+                        <td style="width: 50%; padding: 10px;">
+                            <strong>🔑 Entregable Clave:</strong>
+                            <ul>
+                                <li>Feature 1 seleccionada y claramente definida.</li>
+                                <li>Diseño técnico detallado de cómo funcionará la Feature 1 y se integrará con el núcleo.</li>
+                                <li>Tareas específicas para la Feature 1 añadidas a la columna "Por Hacer" del Kanban.</li>
+                                <li>Primera tarea de la Feature 1 movida a "Haciendo".</li>
+                            </ul>
+                             <strong>🛠️ Materiales/Preparación:</strong>
+                            <ul>
+                                <li>Dispositivos con acceso a Scratch y los proyectos con núcleo estable.</li>
+                                <li>Tablero Kanban de cada equipo actualizado.</li>
+                                <li>Acceso al T-Bar original (con posibles ideas de features adicionales).</li>
+                                <li>Diseño técnico/flujo del núcleo.</li>
+                                <li>Proyector o pantalla.</li>
+                                <li>Post-its/tarjetas adicionales si el Kanban es físico.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- Desarrollo de la Sesión -->
+
+        <!-- Actividad 1: Stand-up de Expansión -->
+        <div id="activity-1" class="activity">
+             <div class="banner" onclick="toggleContent('activity_1_content')">
+                <div class="title">➕ Actividad 1: Stand-up de Expansión ⏰ Tiempo: 7 minutos</div>
+             </div>
+            <div id="activity_1_content" class="content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 50%;">Acción</th>
+                            <th style="width: 50%;">Diálogo del Maestro</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <strong>Paso 1 (1 min):</strong> Iniciar sesión enfocando en la expansión del proyecto.
+                                (<strong>Proyectar Diapositiva 1</strong>: Título "Sesión 7: ¡Expandiendo la Misión!" y Objetivo: "¡Planificar nuestra primera Feature Adicional!").
+                            </td>
+                            <td>
+                                "¡Equipos Pro! ¡Felicidades por tener un núcleo estable! Ahora que la base es sólida, es momento de ¡Expandir la Misión! Vamos a añadir la primera característica adicional (Feature) para hacer nuestro proyecto aún más increíble."
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Paso 2 (6 min):</strong> Guiar revisión del backlog (tareas del T-Bar no incluidas en el núcleo) o ideas nuevas. Equipos seleccionan UNA feature prioritaria.
+                                (<strong>Proyectar Diapositiva 2</strong>: Título "¿Qué Feature Añadimos Ahora?". Visual del T-Bar/Backlog con ideas secundarias resaltadas. Iconos: Más ➕, Estrella ✨, Bombilla 💡).
+                            </td>
+                            <td>
+                                "Miren su T-Bar original y su backlog. ¿Qué ideas interesantes quedaron fuera del núcleo inicial? ¿Qué característica adicional creen que aportará más valor o será más emocionante añadir AHORA?"
+                                <br><br>
+                                "Puede ser una animación extra, un nuevo personaje interactivo, un sonido al pasar el mouse, un pequeño nivel adicional... ¡basado en su diseño original!"
+                                <br><br>
+                                "Discutan en equipo y elijan <strong>UNA</strong> feature adicional en la que se enfocarán ahora. ¿Cuál será la Feature 1?"
+                                <br><br>
+                                <em>(Facilitar la discusión y selección. Ayudar a priorizar si hay dudas. Asegurar que cada equipo seleccione y defina claramente su Feature 1).</em>
+                                <br><br>
+                                "¿Listos? ¿Todos tienen clara su Feature 1?"
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Actividad 2: Diseño Feature 1 -->
+        <div id="activity-2" class="activity">
+             <div class="banner" onclick="toggleContent('activity_2_content')">
+                 <div class="title">✍️ Actividad 2: Diseño Feature 1 ⏰ Tiempo: 15 minutos</div>
+             </div>
+            <div id="activity_2_content" class="content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 50%;">Acción</th>
+                            <th style="width: 50%;">Diálogo del Maestro</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <strong>Paso 1 (8 min):</strong> Guiar el diseño técnico detallado de la Feature 1. ¿Cómo funcionará exactamente en Scratch?
+                                (<strong>Proyectar Diapositiva 3</strong>: Título "Diseñando la Feature 1". Iconos: Lupa sobre código 🔍💻, Engranajes ⚙️, Plano detallado 📐).
+                            </td>
+                            <td>
+                                "¡Tenemos la Feature 1 seleccionada! Ahora, Arquitectos/as, lideren el diseño técnico detallado. ¿Cómo va a funcionar exactamente esta nueva característica en Scratch?"
+                                <br><br>
+                                "Describan el paso a paso: ¿Qué evento la dispara (clic, tecla, mensaje recibido)? ¿Qué sprites o fondos están involucrados? ¿Qué acciones deben ocurrir (moverse, cambiar disfraz, decir algo, cambiar variable)?"
+                                <br><br>
+                                "¡Sean lo más específicos posible en cómo debe comportarse esta nueva parte del proyecto!"
+                                <br><br>
+                                <em>(Facilitar la discusión técnica. Animar a esbozar o anotar los pasos lógicos de la feature).</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Paso 2 (7 min):</strong> Identificar bloques nuevos necesarios y cómo se integra la feature con el núcleo existente.
+                            </td>
+                            <td>
+                                "Pensando en esa funcionalidad detallada, ahora identifiquen:"
+                                <ul>
+                                    <li>"¿Qué <strong>bloques nuevos</strong> de Scratch creen que necesitarán usar? ¿Alguno que no hayan usado mucho antes?"</li>
+                                    <li>"<strong>¿Cómo se conecta</strong> esta feature con el núcleo que ya construyeron? ¿Necesita recibir un mensaje del núcleo? ¿Necesita modificar una variable que usa el núcleo? ¿Cómo evitamos que interfiera negativamente con lo que ya funciona?"</li>
+                                </ul>
+                                "¡Es clave pensar en la integración desde el diseño!"
+                                <br><br>
+                                <em>(Ayudar a los equipos a pensar en la implementación técnica y la interacción con el código existente).</em>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Actividad 3: Backlog Feature 1 -->
+        <div id="activity-3" class="activity">
+            <div class="banner" onclick="toggleContent('activity_3_content')">
+                <div class="title">📝 Actividad 3: Backlog Feature 1 ⏰ Tiempo: 13 minutos</div>
+            </div>
+            <div id="activity_3_content" class="content">
+                 <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 50%;">Acción</th>
+                            <th style="width: 50%;">Diálogo del Maestro</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <strong>Paso 1 (3 min):</strong> Explicar cómo descomponer la Feature 1 diseñada en tareas específicas para el Kanban.
+                                (<strong>Proyectar Diapositiva 4</strong>: Título "Backlog Feature 1: ¡Nuevas Tareas!". Ejemplo visual: Feature = 'Personaje Saluda', Tareas = 'Crear sprite saludo', 'Programar animación saludo', 'Programar trigger saludo (ej. al recibir mensaje X)').
+                            </td>
+                            <td>
+                                "¡Diseño listo! Ahora, vamos a convertir ese diseño en tareas accionables para nuestro Kanban. Igual que hicimos con el núcleo, pero ahora para la Feature 1."
+                                <br><br>
+                                "Descompongan la funcionalidad completa de la Feature 1 en pasos pequeños y específicos que se puedan programar en Scratch."
+                                <br><br>
+                                "Por ejemplo, si la Feature 1 es 'Que el personaje principal salude al final', las tareas podrían ser: 'Diseñar/Elegir disfraz de saludo', 'Programar secuencia de animación de saludo', 'Programar cuándo ocurre el saludo (ej. al recibir mensaje 'Fin')'."
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Paso 2 (10 min):</strong> Equipos crean las tareas detalladas para la Feature 1 y las añaden a la columna "Por Hacer (💡)" del Kanban. Circular y apoyar.
+                            </td>
+                            <td>
+                                "¡A crear el backlog de la Feature 1! Tienen 10 minutos para escribir todas las tareas necesarias para implementar esta nueva característica."
+                                <br><br>
+                                "Escriban cada tarea en un post-it/tarjeta y añádanla a la columna 'Por Hacer (💡)' de su Kanban. ¡Sean claros y específicos!"
+                                <br><br>
+                                "¡Piensen en todos los pasos de programación, diseño de sprites/fondos y sonidos que implica esta feature!"
+                                <br><br>
+                                <em>(Circular activamente. Ayudar a descomponer la feature en tareas manejables. Asegurar que las tareas estén bien definidas).</em>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Actividad 4: Arranque Feature 1 -->
+        <div id="activity-4" class="activity">
+            <div class="banner" onclick="toggleContent('activity_4_content')">
+                <div class="title">🚀 Actividad 4: Arranque Feature 1 ⏰ Tiempo: 5 minutos</div>
+            </div>
+            <div id="activity_4_content" class="content">
+                 <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 50%;">Acción</th>
+                            <th style="width: 50%;">Diálogo del Maestro</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <strong>Paso 1 (3 min):</strong> Guiar selección de la primera tarea de la Feature 1 y moverla a "Haciendo (⚙️)".
+                                (<strong>Proyectar Diapositiva 5</strong>: Título "¡Arranque Feature 1!". Visual del Kanban con flecha moviendo la primera tarea de la Feature 1 a 'Haciendo').
+                            </td>
+                            <td>
+                                "¡Planificación de la Feature 1 completa! Ahora, ¡a empezar a construirla!"
+                                <br><br>
+                                "Arquitectos/as, junto con su equipo, elijan la primera tarea lógica para empezar a implementar la Feature 1 de su nuevo backlog."
+                                <br><br>
+                                "Programadores/as, ¡muevan esa tarea a la columna 'Haciendo (⚙️)'!"
+                                <br><br>
+                                "¡Excelente! ¡La expansión de la misión ha comenzado!"
+                            </td>
+                        </tr>
+                         <tr>
+                            <td>
+                                <strong>Paso 2 (2 min):</strong> Cerrar sesión. Recordar guardar. Anticipar Sesión 8 (Desarrollo Feature 1).
+                            </td>
+                            <td>
+                                "¡Fantástico trabajo de planificación hoy, Equipos Pro!"
+                                <br><br>
+                                "Han seleccionado y diseñado su primera feature adicional, y ya tienen la primera tarea en marcha."
+                                <br><br>
+                                "¡No olviden guardar todo su progreso!"
+                                <br><br>
+                                "En la próxima sesión, nos dedicaremos a programar esta Feature 1 y a integrarla con nuestro núcleo. ¡Prepárense para seguir construyendo!"
+                                <br><br>
+                                "¡Nos vemos en la Sesión 8!"
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div> <!-- Fin del container -->
+</body>
+</html>
