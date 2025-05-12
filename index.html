@@ -14,12 +14,21 @@
             color: white;
             padding: 10px;
             cursor: pointer;
-            margin-bottom: 10px;
+            margin-bottom: 10px; /* Adjusted for spacing */
             font-weight: bold;
             list-style: none;
             display: block;
+            border-radius: 5px; /* Rounded corners for banner */
         }
-        .content { display: none; padding: 10px; border: 1px solid #ddd; margin-bottom: 10px; }
+        .content { 
+            display: none; 
+            padding: 15px; 
+            border: 1px solid #ddd; 
+            margin-bottom: 10px; 
+            border-radius: 5px; /* Rounded corners for content */
+            margin-top: -10px; /* Visual connection with banner */
+            padding-top: 20px; /* Avoid text clash */
+        }
         table {
             width: 100%;
             border-collapse: collapse;
@@ -43,13 +52,16 @@
         }
         .time-title { margin-bottom: 20px; text-align: center; font-size: 1.2em; color: #555;}
 
-        summary {
-           display: block;
-           list-style: none;
+        /* Making facilitator instructions clearer */
+        td em, td i { /* Style for italicized facilitator notes */
+            color: #555;
+            font-style: italic;
+            display: block; /* Put notes on new lines */
+            margin-top: 5px;
         }
-        summary::-webkit-details-marker {
-           display: none;
-        }
+        /* Ensure step <strong> tags render bold */
+        td strong { font-weight: bold; } /* General strong for keywords */
+        td > strong { display: block; margin-bottom: 5px; } /* For step headers */
 
     </style>
     <script>
@@ -69,6 +81,11 @@
             contents.forEach(content => {
                 content.style.display = 'none';
             });
+            // Open "Resumen de Sesión" by default
+            const resumenContent = document.getElementById('activity_0_content');
+            if (resumenContent) {
+                resumenContent.style.display = 'block';
+            }
         };
     </script>
 </head>
@@ -84,7 +101,7 @@
             <div class="banner" onclick="toggleContent('activity_0_content')">
                 <div class="title">📝 Resumen de Sesión</div>
             </div>
-            <div id="activity_0_content" class="content">
+            <div id="activity_0_content" class="content" style="display: block;">
                 <table>
                     <tr>
                         <td style="width: 50%; padding: 10px; border-right: 1px solid #ddd;">
@@ -138,8 +155,11 @@
                     <tbody>
                         <tr>
                             <td>
-                                <strong>Paso 1 (1 min):</strong> Iniciar sesión enfocando en la expansión del proyecto.
-                                (<strong>Proyectar Diapositiva 1</strong>: Título "Sesión 7: ¡Expandiendo la Misión!" y Objetivo: "¡Planificar nuestra primera Feature Adicional!").
+                                <strong>Paso 1 (1 min):</strong>
+                                <ul>
+                                    <li>Iniciar sesión enfocando en la expansión del proyecto.</li>
+                                    <li><strong>Proyectar Diapositiva 1</strong>.</li>
+                                </ul>
                             </td>
                             <td>
                                 "¡Equipos Pro! ¡Felicidades por tener un núcleo estable! Ahora que la base es sólida, es momento de ¡Expandir la Misión! Vamos a añadir la primera característica adicional (Feature) para hacer nuestro proyecto aún más increíble."
@@ -147,8 +167,12 @@
                         </tr>
                         <tr>
                             <td>
-                                <strong>Paso 2 (6 min):</strong> Guiar revisión del backlog (tareas del T-Bar no incluidas en el núcleo) o ideas nuevas. Equipos seleccionan UNA feature prioritaria.
-                                (<strong>Proyectar Diapositiva 2</strong>: Título "¿Qué Feature Añadimos Ahora?". Visual del T-Bar/Backlog con ideas secundarias resaltadas. Iconos: Más ➕, Estrella ✨, Bombilla 💡).
+                                <strong>Paso 2 (6 min):</strong>
+                                <ul>
+                                    <li>Guiar revisión del backlog (tareas del T-Bar no incluidas en el núcleo) o ideas nuevas.</li>
+                                    <li>Equipos seleccionan UNA feature prioritaria.</li>
+                                    <li><strong>Proyectar Diapositiva 2</strong>.</li>
+                                </ul>
                             </td>
                             <td>
                                 "Miren su T-Bar original y su backlog. ¿Qué ideas interesantes quedaron fuera del núcleo inicial? ¿Qué característica adicional creen que aportará más valor o será más emocionante añadir AHORA?"
@@ -183,8 +207,11 @@
                     <tbody>
                         <tr>
                             <td>
-                                <strong>Paso 1 (8 min):</strong> Guiar el diseño técnico detallado de la Feature 1. ¿Cómo funcionará exactamente en Scratch?
-                                (<strong>Proyectar Diapositiva 3</strong>: Título "Diseñando la Feature 1". Iconos: Lupa sobre código 🔍💻, Engranajes ⚙️, Plano detallado 📐).
+                                <strong>Paso 1 (8 min):</strong>
+                                <ul>
+                                    <li>Guiar el diseño técnico detallado de la Feature 1. ¿Cómo funcionará exactamente en Scratch?</li>
+                                    <li><strong>Proyectar Diapositiva 3</strong>.</li>
+                                </ul>
                             </td>
                             <td>
                                 "¡Tenemos la Feature 1 seleccionada! Ahora, Arquitectos/as, lideren el diseño técnico detallado. ¿Cómo va a funcionar exactamente esta nueva característica en Scratch?"
@@ -198,7 +225,10 @@
                         </tr>
                         <tr>
                             <td>
-                                <strong>Paso 2 (7 min):</strong> Identificar bloques nuevos necesarios y cómo se integra la feature con el núcleo existente.
+                                <strong>Paso 2 (7 min):</strong>
+                                <ul>
+                                    <li>Identificar bloques nuevos necesarios y cómo se integra la feature con el núcleo existente.</li>
+                                </ul>
                             </td>
                             <td>
                                 "Pensando en esa funcionalidad detallada, ahora identifiquen:"
@@ -232,8 +262,11 @@
                     <tbody>
                         <tr>
                             <td>
-                                <strong>Paso 1 (3 min):</strong> Explicar cómo descomponer la Feature 1 diseñada en tareas específicas para el Kanban.
-                                (<strong>Proyectar Diapositiva 4</strong>: Título "Backlog Feature 1: ¡Nuevas Tareas!". Ejemplo visual: Feature = 'Personaje Saluda', Tareas = 'Crear sprite saludo', 'Programar animación saludo', 'Programar trigger saludo (ej. al recibir mensaje X)').
+                                <strong>Paso 1 (3 min):</strong>
+                                <ul>
+                                    <li>Explicar cómo descomponer la Feature 1 diseñada en tareas específicas para el Kanban.</li>
+                                    <li><strong>Proyectar Diapositiva 4</strong>.</li>
+                                </ul>
                             </td>
                             <td>
                                 "¡Diseño listo! Ahora, vamos a convertir ese diseño en tareas accionables para nuestro Kanban. Igual que hicimos con el núcleo, pero ahora para la Feature 1."
@@ -245,7 +278,11 @@
                         </tr>
                         <tr>
                             <td>
-                                <strong>Paso 2 (10 min):</strong> Equipos crean las tareas detalladas para la Feature 1 y las añaden a la columna "Por Hacer (💡)" del Kanban. Circular y apoyar.
+                                <strong>Paso 2 (10 min):</strong>
+                                <ul>
+                                    <li>Equipos crean las tareas detalladas para la Feature 1 y las añaden a la columna "Por Hacer (💡)" del Kanban.</li>
+                                    <li>Circular y apoyar.</li>
+                                </ul>
                             </td>
                             <td>
                                 "¡A crear el backlog de la Feature 1! Tienen 10 minutos para escribir todas las tareas necesarias para implementar esta nueva característica."
@@ -278,8 +315,11 @@
                     <tbody>
                         <tr>
                             <td>
-                                <strong>Paso 1 (3 min):</strong> Guiar selección de la primera tarea de la Feature 1 y moverla a "Haciendo (⚙️)".
-                                (<strong>Proyectar Diapositiva 5</strong>: Título "¡Arranque Feature 1!". Visual del Kanban con flecha moviendo la primera tarea de la Feature 1 a 'Haciendo').
+                                <strong>Paso 1 (3 min):</strong>
+                                <ul>
+                                    <li>Guiar selección de la primera tarea de la Feature 1 y moverla a "Haciendo (⚙️)".</li>
+                                    <li><strong>Proyectar Diapositiva 5</strong>.</li>
+                                </ul>
                             </td>
                             <td>
                                 "¡Planificación de la Feature 1 completa! Ahora, ¡a empezar a construirla!"
@@ -293,7 +333,12 @@
                         </tr>
                          <tr>
                             <td>
-                                <strong>Paso 2 (2 min):</strong> Cerrar sesión. Recordar guardar. Anticipar Sesión 8 (Desarrollo Feature 1).
+                                <strong>Paso 2 (2 min):</strong>
+                                <ul>
+                                    <li>Cerrar sesión.</li>
+                                    <li>Recordar guardar.</li>
+                                    <li>Anticipar Sesión 8 (Desarrollo Feature 1).</li>
+                                </ul>
                             </td>
                             <td>
                                 "¡Fantástico trabajo de planificación hoy, Equipos Pro!"
